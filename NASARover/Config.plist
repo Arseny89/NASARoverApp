@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>apiKey</key>
+	<string>EroVyVyhsPuT2ec8bfPQb51yb1TG6tdIh6K17OaC</string>
+	<key>nasaAPI</key>
+	<dict>
+		<key>scheme</key>
+		<string>https</string>
+		<key>host</key>
+		<string>api.nasa.gov</string>
+		<key>subDomain</key>
+		<string>/mars-photos</string>
+		<key>apiVersion</key>
+		<string>/api/v1</string>
+	</dict>
+</dict>
+</plist>
