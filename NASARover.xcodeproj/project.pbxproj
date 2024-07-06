@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
+		0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */; };
+		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
+		0E6C82022C38E06800A758ED /* Rovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C82012C38E06800A758ED /* Rovers.swift */; };
+		0E6C82042C38E13800A758ED /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6C82032C38E13800A758ED /* Config.plist */; };
 		0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */; };
 		0EFFB9742C38D4D1004472F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9732C38D4D1004472F7 /* ContentView.swift */; };
 		0EFFB9762C38D4D2004472F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFFB9752C38D4D2004472F7 /* Assets.xcassets */; };
@@ -14,6 +19,9 @@
 		0EFFB9832C38D4D2004472F7 /* NASARoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9822C38D4D2004472F7 /* NASARoverTests.swift */; };
 		0EFFB98D2C38D4D2004472F7 /* NASARoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB98C2C38D4D2004472F7 /* NASARoverUITests.swift */; };
 		0EFFB98F2C38D4D2004472F7 /* NASARoverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB98E2C38D4D2004472F7 /* NASARoverUITestsLaunchTests.swift */; };
+		61B02CE673393BBE28A19181 /* Pods_NASARoverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2339837E4F63F6F54111BB /* Pods_NASARoverTests.framework */; };
+		7301A9E2868EB389C194C6B5 /* Pods_NASARover_NASARoverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480A82F56C2641AD4CEE0A90 /* Pods_NASARover_NASARoverUITests.framework */; };
+		F496B35A3F467C047A3233F2 /* Pods_NASARover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766427ED6A2C0A90BB0A9BCF /* Pods_NASARover.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
+		0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointProvider.swift; sourceTree = "<group>"; };
+		0E6C81FF2C38E04800A758ED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0E6C82012C38E06800A758ED /* Rovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rovers.swift; sourceTree = "<group>"; };
+		0E6C82032C38E13800A758ED /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		0EFFB96E2C38D4D1004472F7 /* NASARover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASARover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoverApp.swift; sourceTree = "<group>"; };
 		0EFFB9732C38D4D1004472F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +57,15 @@
 		0EFFB9882C38D4D2004472F7 /* NASARoverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASARoverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFFB98C2C38D4D2004472F7 /* NASARoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoverUITests.swift; sourceTree = "<group>"; };
 		0EFFB98E2C38D4D2004472F7 /* NASARoverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		480A82F56C2641AD4CEE0A90 /* Pods_NASARover_NASARoverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASARover_NASARoverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD883842793FC0EB9C1C385 /* Pods-NASARoverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARoverTests.debug.xcconfig"; path = "Target Support Files/Pods-NASARoverTests/Pods-NASARoverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B2339837E4F63F6F54111BB /* Pods_NASARoverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASARoverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		766427ED6A2C0A90BB0A9BCF /* Pods_NASARover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASARover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E0589F1B697F5AC839A0CB /* Pods-NASARover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARover.debug.xcconfig"; path = "Target Support Files/Pods-NASARover/Pods-NASARover.debug.xcconfig"; sourceTree = "<group>"; };
+		7FFC81453981D3362D085BDC /* Pods-NASARover-NASARoverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARover-NASARoverUITests.debug.xcconfig"; path = "Target Support Files/Pods-NASARover-NASARoverUITests/Pods-NASARover-NASARoverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F21399AEDC7E91D5CBB08B0 /* Pods-NASARover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARover.release.xcconfig"; path = "Target Support Files/Pods-NASARover/Pods-NASARover.release.xcconfig"; sourceTree = "<group>"; };
+		9662124092BDD9B8EEE7DA3F /* Pods-NASARover-NASARoverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARover-NASARoverUITests.release.xcconfig"; path = "Target Support Files/Pods-NASARover-NASARoverUITests/Pods-NASARover-NASARoverUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F7CC15C0C260EED5F1744E75 /* Pods-NASARoverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASARoverTests.release.xcconfig"; path = "Target Support Files/Pods-NASARoverTests/Pods-NASARoverTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F496B35A3F467C047A3233F2 /* Pods_NASARover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B02CE673393BBE28A19181 /* Pods_NASARoverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +89,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7301A9E2868EB389C194C6B5 /* Pods_NASARover_NASARoverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6C81F92C38E01000A758ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E6C81FF2C38E04800A758ED /* APIError.swift */,
+				0E6C82012C38E06800A758ED /* Rovers.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E6C81FA2C38E01600A758ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */,
+				0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0EFFB9652C38D4D1004472F7 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +121,8 @@
 				0EFFB9812C38D4D2004472F7 /* NASARoverTests */,
 				0EFFB98B2C38D4D2004472F7 /* NASARoverUITests */,
 				0EFFB96F2C38D4D1004472F7 /* Products */,
+				7437417BD43F38DBE726FBCA /* Pods */,
+				817E354C3EFC1FEC1B5A3856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +139,13 @@
 		0EFFB9702C38D4D1004472F7 /* NASARover */ = {
 			isa = PBXGroup;
 			children = (
-				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
 				0EFFB9732C38D4D1004472F7 /* ContentView.swift */,
+				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
+				0E6C81FA2C38E01600A758ED /* Services */,
+				0E6C81F92C38E01000A758ED /* Models */,
 				0EFFB9752C38D4D2004472F7 /* Assets.xcassets */,
 				0EFFB9772C38D4D2004472F7 /* Preview Content */,
+				0E6C82032C38E13800A758ED /* Config.plist */,
 			);
 			path = NASARover;
 			sourceTree = "<group>";
@@ -127,6 +175,29 @@
 			path = NASARoverUITests;
 			sourceTree = "<group>";
 		};
+		7437417BD43F38DBE726FBCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76E0589F1B697F5AC839A0CB /* Pods-NASARover.debug.xcconfig */,
+				8F21399AEDC7E91D5CBB08B0 /* Pods-NASARover.release.xcconfig */,
+				7FFC81453981D3362D085BDC /* Pods-NASARover-NASARoverUITests.debug.xcconfig */,
+				9662124092BDD9B8EEE7DA3F /* Pods-NASARover-NASARoverUITests.release.xcconfig */,
+				5BD883842793FC0EB9C1C385 /* Pods-NASARoverTests.debug.xcconfig */,
+				F7CC15C0C260EED5F1744E75 /* Pods-NASARoverTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		817E354C3EFC1FEC1B5A3856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				766427ED6A2C0A90BB0A9BCF /* Pods_NASARover.framework */,
+				480A82F56C2641AD4CEE0A90 /* Pods_NASARover_NASARoverUITests.framework */,
+				6B2339837E4F63F6F54111BB /* Pods_NASARoverTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EFFB9922C38D4D2004472F7 /* Build configuration list for PBXNativeTarget "NASARover" */;
 			buildPhases = (
+				7C30214C5C65E07650FA2784 /* [CP] Check Pods Manifest.lock */,
 				0EFFB96A2C38D4D1004472F7 /* Sources */,
 				0EFFB96B2C38D4D1004472F7 /* Frameworks */,
 				0EFFB96C2C38D4D1004472F7 /* Resources */,
+				58F5217FC39EE60EBE4B4DA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EFFB9952C38D4D2004472F7 /* Build configuration list for PBXNativeTarget "NASARoverTests" */;
 			buildPhases = (
+				BBFC3F60D148AB17AF642A60 /* [CP] Check Pods Manifest.lock */,
 				0EFFB97A2C38D4D2004472F7 /* Sources */,
 				0EFFB97B2C38D4D2004472F7 /* Frameworks */,
 				0EFFB97C2C38D4D2004472F7 /* Resources */,
@@ -169,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EFFB9982C38D4D2004472F7 /* Build configuration list for PBXNativeTarget "NASARoverUITests" */;
 			buildPhases = (
+				B3019A80D76B071C112A0827 /* [CP] Check Pods Manifest.lock */,
 				0EFFB9842C38D4D2004472F7 /* Sources */,
 				0EFFB9852C38D4D2004472F7 /* Frameworks */,
 				0EFFB9862C38D4D2004472F7 /* Resources */,
+				669D76CABE948B2BBC944B4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EFFB9792C38D4D2004472F7 /* Preview Assets.xcassets in Resources */,
+				0E6C82042C38E13800A758ED /* Config.plist in Resources */,
 				0EFFB9762C38D4D2004472F7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +329,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58F5217FC39EE60EBE4B4DA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASARover/Pods-NASARover-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASARover/Pods-NASARover-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NASARover/Pods-NASARover-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		669D76CABE948B2BBC944B4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASARover-NASARoverUITests/Pods-NASARover-NASARoverUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASARover-NASARoverUITests/Pods-NASARover-NASARoverUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NASARover-NASARoverUITests/Pods-NASARover-NASARoverUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C30214C5C65E07650FA2784 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NASARover-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3019A80D76B071C112A0827 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NASARover-NASARoverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFC3F60D148AB17AF642A60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NASARoverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0EFFB96A2C38D4D1004472F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -259,6 +439,10 @@
 			files = (
 				0EFFB9742C38D4D1004472F7 /* ContentView.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
+				0E6C82022C38E06800A758ED /* Rovers.swift in Sources */,
+				0E6C82002C38E04800A758ED /* APIError.swift in Sources */,
+				0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */,
+				0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +600,7 @@
 		};
 		0EFFB9932C38D4D2004472F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E0589F1B697F5AC839A0CB /* Pods-NASARover.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -423,6 +608,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NASARover/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -444,6 +630,7 @@
 		};
 		0EFFB9942C38D4D2004472F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F21399AEDC7E91D5CBB08B0 /* Pods-NASARover.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +638,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NASARover/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -472,6 +660,7 @@
 		};
 		0EFFB9962C38D4D2004472F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD883842793FC0EB9C1C385 /* Pods-NASARoverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +680,7 @@
 		};
 		0EFFB9972C38D4D2004472F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7CC15C0C260EED5F1744E75 /* Pods-NASARoverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +700,7 @@
 		};
 		0EFFB9992C38D4D2004472F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FFC81453981D3362D085BDC /* Pods-NASARover-NASARoverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +718,7 @@
 		};
 		0EFFB99A2C38D4D2004472F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9662124092BDD9B8EEE7DA3F /* Pods-NASARover-NASARoverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
