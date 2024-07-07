@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+   let apiDataProvider = APIDataProvider()
+    
+    init() {
+        apiDataProvider.getData(for: .manifests(rover: .curiosity)){ (data: Data) in
+        } errorHandler: {error in
+        }
+    }
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
