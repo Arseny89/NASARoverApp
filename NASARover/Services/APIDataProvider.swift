@@ -46,6 +46,7 @@ final class APIDataProvider {
                     }
                     
                     let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     DispatchQueue.main.async {
                         if (200...299) ~= statusCode {
                             do {
