@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
+        
+        ZStack{
+            Color($viewModel.photoDict.wrappedValue.isEmpty ? .white : .red)
+                .ignoresSafeArea()
+        }
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -21,5 +28,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ViewModel(for: .curiosity))
 }
