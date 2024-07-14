@@ -10,20 +10,14 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel: ViewModel
-    
     var body: some View {
-        
-        ZStack{
+        ZStack {
             Color($viewModel.photoDict.wrappedValue.isEmpty ? .white : .red)
                 .ignoresSafeArea()
         }
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        .onAppear {
+            viewModel.bind()
         }
-        .padding()
     }
 }
 
