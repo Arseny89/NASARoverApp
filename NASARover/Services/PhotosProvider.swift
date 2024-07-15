@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol PhotosProvider {
-    func fetchPhotos(for rover: Rovers, _ completion: @escaping ([Int: URL]) -> ())
+    func fetchPhotos() -> AnyPublisher<[Int: URL], AppError>
 }
 
 final class PhotosProviderImpl: PhotosProvider {
@@ -24,55 +25,63 @@ final class PhotosProviderImpl: PhotosProvider {
         udStorageManager.object(for: .favoritePhotos) ?? []
     }
     private var currentPage = 1
-    func getManifestData(for rover: Rovers) {
-        dataProvider.getData(for: .manifests(rover: rover)) { [weak self] (data: ManifestResponse) in
-            guard let self else { return }
-            self.manifest = data.photoManifest
-            currentSolData = manifest?.photos.last
-        } errorHandler: {error in
-            print(error)
-        }
+    var rover: Rovers
+    
+    init(for rover: Rovers) {
+        self.rover = rover
     }
     
-    func getRoverPhotos(for rover: Rovers, forSol sol: Int, _ page: Int) {
-        dataProvider.getData(for: .photosBySol(sol: sol, rover: rover, page: page)) { [weak self] data in
-            guard let self else { return }
-            photoCache.append(data)
-        } errorHandler: { error in
-            print(error.localizedDescription)
-        }
-    }
-    
-    func fetchPhotos(for rover: Rovers, _ completion: @escaping ([Int: URL]) -> ()) {
-        if manifest != nil {
-            getPhotos(for: rover, completion)
+    private func getManifestData() -> AnyPublisher<PhotoManifest, AppError> {
+        if let manifest {
+            return Just(manifest)
+                .setFailureType(to: AppError.self)
+                .eraseToAnyPublisher()
         } else {
-            dataProvider.getData(for: .manifests(rover: rover)) { [weak self] (data: ManifestResponse) in
-                guard let self else { return }
-                manifest = data.photoManifest
-                currentSolData = manifest?.photos.first(where: {$0.sol == self.manifest?.maxSol})
-                getPhotos(for: rover, completion)
-            } errorHandler: {error in
-            }
+            return dataProvider.request(for: .manifests(rover: rover))
+                .map { (response: ManifestResponse) in
+                    return response.photoManifest
+                }
+                .eraseToAnyPublisher()
         }
     }
     
-    func getPhotos(for rover: Rovers, _ completion: @escaping ([Int: URL]) -> ()) {
-        guard let currentSolData else { return }
-        guard let manifest else { return }
-        dataProvider.getData(for: .photosBySol(sol: currentSolData.sol, rover: rover, page: currentPage)) { [weak self] (data: PhotoResponse) in
-            guard let self else { return }
-            currentPage += 1
-            if currentPage > currentSolData.pagesCount {
-                currentPage = 1
-                self.currentSolData = manifest.photos.last(where: {$0.sol < currentSolData.sol})
-            }
-            data.photos.forEach {
-                self.photoUrlCache[$0.id] = $0.imageURL
-            }
-            completion(photoUrlCache)
-        } errorHandler: { error in
+    private func getRoverPhotos() -> AnyPublisher<PhotoResponse, AppError> {
+        guard let currentSolData else {
+            return Fail(error: AppError.other("SolData invalid"))
+                .eraseToAnyPublisher()
         }
+        return dataProvider.request(for: .photosBySol(sol: currentSolData.sol, rover: rover, page: currentPage))
+    }
+    
+    func fetchPhotos() -> AnyPublisher<[Int: URL], AppError> {
+        return getManifestData()
+            .flatMap { [weak self] manifest -> AnyPublisher<[Int: URL], AppError> in
+                guard let self else {
+                    return Fail(error: AppError.unknown)
+                        .eraseToAnyPublisher()
+                }
+                self.manifest = manifest
+                if currentSolData == nil {
+                    currentSolData = manifest.photos.first(where: {$0.sol == self.manifest?.maxSol})
+                }
+                return getRoverPhotos()
+                    .flatMap { response -> AnyPublisher<[Int: URL], AppError> in
+                        self.currentPage += 1
+                        if let currentSolData = self.currentSolData,
+                           self.currentPage > currentSolData.pagesCount {
+                            self.currentPage = 1
+                            self.currentSolData = manifest.photos.last(where: {$0.sol < currentSolData.sol})
+                        }
+                        response.photos.forEach {
+                            self.photoUrlCache[$0.id] = $0.imageURL
+                        }
+                        return Just(self.photoUrlCache)
+                            .setFailureType(to: AppError.self)
+                            .eraseToAnyPublisher()
+                    }
+                    .eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
     }
     
     func addToFavorite(_ photo: PhotoData) {

@@ -11,6 +11,7 @@
 		0E51434D2C3B85FD00C48DFD /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */; };
 		0E51434F2C3B893700C48DFD /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434E2C3B893700C48DFD /* PhotosProvider.swift */; };
 		0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */; };
+		0E5143562C4242EE00C48DFD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143552C4242EE00C48DFD /* ViewModel.swift */; };
 		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
 		0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */; };
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
@@ -50,6 +51,7 @@
 		0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		0E51434E2C3B893700C48DFD /* PhotosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorageManager.swift; sourceTree = "<group>"; };
+		0E5143552C4242EE00C48DFD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointProvider.swift; sourceTree = "<group>"; };
 		0E6C81FF2C38E04800A758ED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				0EFFB9732C38D4D1004472F7 /* ContentView.swift */,
 				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
+				0E5143552C4242EE00C48DFD /* ViewModel.swift */,
 				0E6C81FA2C38E01600A758ED /* Services */,
 				0E6C81F92C38E01000A758ED /* Models */,
 				0EFFB9752C38D4D2004472F7 /* Assets.xcassets */,
@@ -460,6 +463,7 @@
 				0EFFB9742C38D4D1004472F7 /* ContentView.swift in Sources */,
 				0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
+				0E5143562C4242EE00C48DFD /* ViewModel.swift in Sources */,
 				0E6C82022C38E06800A758ED /* Rovers.swift in Sources */,
 				0E51434B2C3B85ED00C48DFD /* ManifestResponse.swift in Sources */,
 				0E6C82002C38E04800A758ED /* APIError.swift in Sources */,

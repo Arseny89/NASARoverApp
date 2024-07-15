@@ -9,17 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color($viewModel.photoDict.wrappedValue.isEmpty ? .white : .red)
+                .ignoresSafeArea()
         }
-        .padding()
+        .onAppear {
+            viewModel.bind()
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ViewModel(for: .curiosity))
 }
