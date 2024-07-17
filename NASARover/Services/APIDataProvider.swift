@@ -30,9 +30,9 @@ enum AppError: Error, Decodable {
 }
 
 final class APIDataProvider {
-    private let endpointProvider = APIEndpointProvider(for: Config.config)
+    private let endpointProvider = APIEndpointProvider(for: .config)
     
-    func getData<T: Decodable>(for endpoint: Endpoint, completion: @escaping (T) -> Void?,
+    func getData<T: Decodable>(for endpoint: APIEndpointProvider.Endpoint, completion: @escaping (T) -> Void?,
                                errorHandler: @escaping (AppError) -> Void?){
         let url = endpointProvider.getURL(for: endpoint)
         
@@ -72,7 +72,7 @@ final class APIDataProvider {
             }
     }
     
-    func request<T: Decodable>(for endpoint: Endpoint) -> AnyPublisher<T, AppError> {
+    func request<T: Decodable>(for endpoint: APIEndpointProvider.Endpoint) -> AnyPublisher<T, AppError> {
         return URLSession.shared
             .dataTaskPublisher(for: endpointProvider.getURL(for: endpoint))
             .subscribe(on: DispatchQueue.global(qos: .background))
