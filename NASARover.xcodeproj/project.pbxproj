@@ -11,14 +11,18 @@
 		0E51434D2C3B85FD00C48DFD /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */; };
 		0E51434F2C3B893700C48DFD /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434E2C3B893700C48DFD /* PhotosProvider.swift */; };
 		0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */; };
-		0E5143562C4242EE00C48DFD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143552C4242EE00C48DFD /* ViewModel.swift */; };
+		0E5143562C4242EE00C48DFD /* RoverSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */; };
+		0E51435A2C44DA4B00C48DFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143592C44DA4B00C48DFD /* Titles.swift */; };
+		0E51435E2C46283E00C48DFD /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0E51435D2C46283E00C48DFD /* PureSwiftUI */; };
+		0E5143602C46286600C48DFD /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51435F2C46286500C48DFD /* Segments.swift */; };
+		0E5143622C4788D600C48DFD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143612C4788D600C48DFD /* Image.swift */; };
 		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
 		0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */; };
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
 		0E6C82022C38E06800A758ED /* Rovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C82012C38E06800A758ED /* Rovers.swift */; };
 		0E6C82042C38E13800A758ED /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6C82032C38E13800A758ED /* Config.plist */; };
 		0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */; };
-		0EFFB9742C38D4D1004472F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9732C38D4D1004472F7 /* ContentView.swift */; };
+		0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */; };
 		0EFFB9762C38D4D2004472F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFFB9752C38D4D2004472F7 /* Assets.xcassets */; };
 		0EFFB9792C38D4D2004472F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFFB9782C38D4D2004472F7 /* Preview Assets.xcassets */; };
 		0EFFB9832C38D4D2004472F7 /* NASARoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9822C38D4D2004472F7 /* NASARoverTests.swift */; };
@@ -51,7 +55,10 @@
 		0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		0E51434E2C3B893700C48DFD /* PhotosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
 		0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorageManager.swift; sourceTree = "<group>"; };
-		0E5143552C4242EE00C48DFD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverSelectionViewModel.swift; sourceTree = "<group>"; };
+		0E5143592C44DA4B00C48DFD /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
+		0E51435F2C46286500C48DFD /* Segments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segments.swift; sourceTree = "<group>"; };
+		0E5143612C4788D600C48DFD /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointProvider.swift; sourceTree = "<group>"; };
 		0E6C81FF2C38E04800A758ED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -59,7 +66,7 @@
 		0E6C82032C38E13800A758ED /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		0EFFB96E2C38D4D1004472F7 /* NASARover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASARover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoverApp.swift; sourceTree = "<group>"; };
-		0EFFB9732C38D4D1004472F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverSelectionView.swift; sourceTree = "<group>"; };
 		0EFFB9752C38D4D2004472F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EFFB9782C38D4D2004472F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EFFB97E2C38D4D2004472F7 /* NASARoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASARoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E51435E2C46283E00C48DFD /* PureSwiftUI in Frameworks */,
 				F496B35A3F467C047A3233F2 /* Pods_NASARover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +117,7 @@
 		0E5143502C3B952A00C48DFD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0E5143612C4788D600C48DFD /* Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 				0E6C82012C38E06800A758ED /* Rovers.swift */,
 				0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */,
 				0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */,
+				0E5143592C44DA4B00C48DFD /* Titles.swift */,
 				0E5143502C3B952A00C48DFD /* Extensions */,
 			);
 			path = Models;
@@ -161,9 +171,10 @@
 		0EFFB9702C38D4D1004472F7 /* NASARover */ = {
 			isa = PBXGroup;
 			children = (
-				0EFFB9732C38D4D1004472F7 /* ContentView.swift */,
+				0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */,
 				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
-				0E5143552C4242EE00C48DFD /* ViewModel.swift */,
+				0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */,
+				0E51435F2C46286500C48DFD /* Segments.swift */,
 				0E6C81FA2C38E01600A758ED /* Services */,
 				0E6C81F92C38E01000A758ED /* Models */,
 				0EFFB9752C38D4D2004472F7 /* Assets.xcassets */,
@@ -239,6 +250,9 @@
 			dependencies = (
 			);
 			name = NASARover;
+			packageProductDependencies = (
+				0E51435D2C46283E00C48DFD /* PureSwiftUI */,
+			);
 			productName = NASARover;
 			productReference = 0EFFB96E2C38D4D1004472F7 /* NASARover.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +328,9 @@
 				Base,
 			);
 			mainGroup = 0EFFB9652C38D4D1004472F7;
+			packageReferences = (
+				0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+			);
 			productRefGroup = 0EFFB96F2C38D4D1004472F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -460,11 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EFFB9742C38D4D1004472F7 /* ContentView.swift in Sources */,
+				0E51435A2C44DA4B00C48DFD /* Titles.swift in Sources */,
+				0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */,
 				0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
-				0E5143562C4242EE00C48DFD /* ViewModel.swift in Sources */,
+				0E5143602C46286600C48DFD /* Segments.swift in Sources */,
+				0E5143562C4242EE00C48DFD /* RoverSelectionViewModel.swift in Sources */,
 				0E6C82022C38E06800A758ED /* Rovers.swift in Sources */,
+				0E5143622C4788D600C48DFD /* Image.swift in Sources */,
 				0E51434B2C3B85ED00C48DFD /* ManifestResponse.swift in Sources */,
 				0E6C82002C38E04800A758ED /* APIError.swift in Sources */,
 				0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */,
@@ -544,7 +564,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -607,7 +627,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -802,6 +822,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E51435D2C46283E00C48DFD /* PureSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			productName = PureSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0EFFB9662C38D4D1004472F7 /* Project object */;
 }
