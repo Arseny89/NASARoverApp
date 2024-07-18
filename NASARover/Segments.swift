@@ -28,9 +28,7 @@ static let layoutConfig = LayoutGuideConfig.grid(columns: 375, rows: 471)
             path.addLine(to: grid[10, 89])
             path.addLine(to: grid[10, 50])
             path.curve(grid[45, 10], cp1: grid[10, 15], cp2: grid[35, 10])
-            
-            
-            
+                      
             return path
         }
     }
@@ -49,9 +47,7 @@ static let layoutConfig = LayoutGuideConfig.grid(columns: 375, rows: 471)
 
             path.addLine(to: grid[35, 150])
             path.curve(grid[10, 150], cp1: grid[22, 134], cp2: grid[10, 140])
-            
-            
-            
+         
             return path
         }
     }
@@ -68,11 +64,9 @@ static let layoutConfig = LayoutGuideConfig.grid(columns: 375, rows: 471)
             path.addLine(to: grid[225, 315])
             path.curve(grid[225, 289], cp1: grid[210, 302], cp2: grid[225, 289])
             
-            
             path.addLine(to: grid[330, 186])
             path.curve(grid[365, 177], cp1: grid[365, 148], cp2: grid[365, 177])
-            
-            
+         
             return path
         }
     }
