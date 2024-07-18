@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ViewModel: ObservableObject {
+final class RoverSelectionViewModel: ObservableObject {
     @Published var photoDict: [Int: URL] = [:]
     @Published var selectedRover: Rovers = .curiosity
     private let photoProvider: PhotosProvider
@@ -29,5 +29,16 @@ final class ViewModel: ObservableObject {
                 photoDict = photos
             }
             .store(in: &cancellables)
+    }
+    
+    func getMissionInfo(for rover: Rovers) -> String {
+        switch rover {
+        case .curiosity:
+            return String(localized: "CuriosityMissionInfo")
+        case .opportunity:
+            return String(localized: "OpportunityMissionInfo")
+        case .spirit:
+            return String(localized: "SpiritMissionInfo")
+        }
     }
 }
