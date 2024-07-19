@@ -15,12 +15,13 @@ extension Image {
     }
     
     init?(image: Images) {
-        self.init(systemName: image.rawValue)
+        self.init(image.rawValue)
     }
     
     enum Icons: String {
         case ellipsisCircle = "ellipsis.circle"
         case calendar = "calendar"
+        case xmark = "xmark"
     }
     
     enum Images: String {
