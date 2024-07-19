@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
     "CuriosityMissionInfo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22,6 +28,9 @@
           }
         }
       }
+    },
+    "Photo Gallery" : {
+
     },
     "SpiritMissionInfo" : {
       "extractionState" : "manual",
