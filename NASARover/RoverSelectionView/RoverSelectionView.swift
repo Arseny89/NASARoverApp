@@ -7,75 +7,81 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RoverSelectionView: View {
     @ObservedObject var viewModel: RoverSelectionViewModel
+    @State private var date = Date()
     
     var body: some View {
-        VStack {
-            ScrollView(showsIndicators: false) {
-                VStack {
-                    ZStack {
-                        ForEach(Rovers.allCases, id: \.self) { rover in
-                            Image("\(rover.rawValue)_shape_bg")
-                                .resizable()
-                                .modifier(ClipAnimatedShape(rover: rover, selectedRover: viewModel.selectedRover))
-                                .onTapGesture {
-                                    withAnimation { viewModel.selectedRover = rover }
-                                }
+        NavigationView {
+            VStack {
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        ZStack {
+                            ForEach(Rovers.allCases, id: \.self) { rover in
+                                Image("\(rover.rawValue)_shape_bg")
+                                    .resizable()
+                                    .modifier(ClipAnimatedShape(rover: rover, selectedRover: viewModel.selectedRover))
+                                    .onTapGesture {
+                                        withAnimation { viewModel.selectedRover = rover }
+                                    }
+                            }
                         }
-                    }
-                    .frame(UIScreen.width, UIScreen.width * 1.25)
-                    Text(Titles.roverSelectionView.rawValue.uppercased())
-                        .font(.system(size: 15, weight: .medium))
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, 10)
-                        .frame(width: UIScreen.width, alignment: .leading)
-                    
-                    TabView(selection: $viewModel.selectedRover) {
-                        ForEach(Rovers.allCases, id: \.self) { rover in
-                            InfoView(rover: rover, viewModel: viewModel)
+                        .frame(UIScreen.width, UIScreen.width * 1.25)
+                        Text(Titles.roverSelectionView.rawValue.uppercased())
+                            .font(.system(size: 15, weight: .medium))
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 10)
+                            .frame(width: UIScreen.width, alignment: .leading)
+                        
+                        TabView(selection: $viewModel.selectedRover) {
+                            ForEach(Rovers.allCases, id: \.self) { rover in
+                                InfoView(rover: rover, viewModel: viewModel)
+                            }
                         }
+                        .tabViewStyle(PageTabViewStyle.init(indexDisplayMode: .never))
+                        .frame(width: UIScreen.width, height: 250)
                     }
-                    .tabViewStyle(PageTabViewStyle.init(indexDisplayMode: .never))
-                    .frame(width: UIScreen.width, height: 250)
                 }
-            }
-            .ignoresSafeArea(.all)
-            
-            HStack(spacing: 10) {
-                Spacer()
-                Button {
-                } label: {
-                    Spacer()
-                    Text(Titles.fetchButton.rawValue.capitalized)
-                        .font(.system(size: 15, weight: .bold))
-                    Spacer()
-                }
-                .foregroundColor(.white)
-                .frame(.infinity, 50, .leading)
-                .backgroundColor(.blue)
-                .clipCapsule()
-                Spacer()
+                .ignoresSafeArea(.all)
                 
-                Button {
-                }
-            label: {
-                Image(icon: .calendar)?
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(20)
+                HStack(spacing: 10) {
+                    Spacer()
+                    NavigationLink {
+                        RoverView(viewModel: RoverViewModel(for: viewModel.selectedRover))
+                    } label: {
+                        Spacer()
+                        Text(Titles.fetchButton.rawValue.capitalized)
+                            .font(.system(size: 15, weight: .bold))
+                        Spacer()
+                    }
                     .foregroundColor(.white)
-                    .padding(.vertical)
-                    .padding(.horizontal, 30)
-            }
-            .backgroundColor(.blue)
-            .frame(.infinity, 50, .trailing)
-            .clipCapsule()
+                    .frame(.infinity, 50, .leading)
+                    .backgroundColor(.blue)
+                    .clipCapsule()
+                    Spacer()
+                    
+                    Button {
+                    }
+                label: {
+                    Image(icon: .calendar)?
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(20)
+                        .foregroundColor(.white)
+                        .padding(.vertical)
+                        .padding(.horizontal, 30)
+                }
+                .backgroundColor(.blue)
+                .frame(.infinity, 50, .trailing)
+                .clipCapsule()
+                    Spacer()
+                }
                 Spacer()
             }
-            Spacer()
         }
+        .ignoresSafeArea()
+        .navigationBarHidden(true)
     }
 }
 
@@ -120,7 +126,7 @@ fileprivate struct InfoView: View {
     }
 }
 
-struct ClipAnimatedShape: ViewModifier {
+fileprivate struct ClipAnimatedShape: ViewModifier {
     var rover: Rovers
     var selectedRover: Rovers
     func body(content: Content) -> some View {
@@ -155,5 +161,5 @@ struct ClipAnimatedShape: ViewModifier {
 }
 
 #Preview {
-    ContentView(viewModel: RoverSelectionViewModel(for: .curiosity))
+    RoverSelectionView(viewModel: RoverSelectionViewModel(for: .curiosity))
 }
