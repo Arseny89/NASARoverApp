@@ -10,11 +10,11 @@ import SwiftUI
 
 extension Image {
     
-    init?(icon: Icons) {
+    init(icon: Icons) {
         self.init(systemName: icon.rawValue)
     }
     
-    init?(image: Images) {
+    init(image: Images) {
         self.init(image.rawValue)
     }
     
