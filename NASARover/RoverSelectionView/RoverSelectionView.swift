@@ -12,7 +12,7 @@ struct RoverSelectionView: View {
     @State private var date = Date()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ScrollView(showsIndicators: false) {
                     VStack {
@@ -55,7 +55,7 @@ struct RoverSelectionView: View {
                         Spacer()
                     }
                     .foregroundColor(.white)
-                    .frame(.infinity, 50, .leading)
+                    .height(50)
                     .backgroundColor(.blue)
                     .clipCapsule()
                     Spacer()
@@ -63,7 +63,7 @@ struct RoverSelectionView: View {
                     Button {
                     }
                 label: {
-                    Image(icon: .calendar)?
+                    Image(icon: .calendar)
                         .renderingMode(.template)
                         .resizable()
                         .scaledToFit()
@@ -73,7 +73,7 @@ struct RoverSelectionView: View {
                         .padding(.horizontal, 30)
                 }
                 .backgroundColor(.blue)
-                .frame(.infinity, 50, .trailing)
+                .height(50)
                 .clipCapsule()
                     Spacer()
                 }
