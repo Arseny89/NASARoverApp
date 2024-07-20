@@ -10,11 +10,12 @@ import SwiftUI
 struct RoverView: View {
     @ObservedObject var viewModel: RoverViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State var presentSheet = true
     @State var minSheetHeight = 100
+    @State var galleryViewHeight: CGFloat = UIScreen.height * 0.1
+    @State var lastHeight: CGFloat = UIScreen.height * 0.1
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ScrollView {
                     VStack {
@@ -29,7 +30,7 @@ struct RoverView: View {
                             Button {
                                 self.presentationMode.wrappedValue.dismiss()
                             } label: {
-                                Image(icon: .xmark)?
+                                Image(icon: .xmark)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(20)
@@ -52,7 +53,7 @@ struct RoverView: View {
                                 Text(Titles.maxDate.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, CGFloat(minSheetHeight) + 40)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
                                     .safeAreaPadding(.leading, 30)
                             }
                             Spacer()
@@ -66,7 +67,7 @@ struct RoverView: View {
                                 Text(Titles.maxSol.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, CGFloat(minSheetHeight) + 40)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
                                     .safeAreaPadding(.leading, 30)
                             }
                             Spacer()
@@ -80,7 +81,7 @@ struct RoverView: View {
                                 Text(Titles.totalPhotos.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, CGFloat(minSheetHeight) + 40)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
                                     .safeAreaPadding(.trailing, 30)
                             }
                         }
@@ -92,15 +93,46 @@ struct RoverView: View {
                             .scaledToFill()
                     }
                 }
+                .scrollDisabled(true)
                 .ignoresSafeArea()
+                PhotoGalleryView()
+                    .height(galleryViewHeight)
+                    .gesture(dragGesture)
             }
         }
         .navigationBarBackButtonHidden(true)
-        .sheet(isPresented: $presentSheet) {
-            Text("Photo Gallery")
-                .presentationDetents([.height(CGFloat(minSheetHeight)), .fraction(0.80)])
-                .interactiveDismissDisabled()
+    }
+}
+
+struct PhotoGalleryView: View {
+    var body: some View {
+        VStack {
+            Rectangle()
+                .frame(width: UIScreen.width * 0.3, height: 5)
+                .clipShape(.capsule)
+                .foregroundColor(.gray)
+            
+            Spacer()
         }
+    }
+}
+
+extension RoverView {
+    
+    var dragGesture: some Gesture {
+        DragGesture(minimumDistance: 20, coordinateSpace: .global)
+            .onChanged { value in
+                if galleryViewHeight >= UIScreen.height * 0.1 {
+                    galleryViewHeight = lastHeight - value.translation.y
+                    galleryViewHeight = max(galleryViewHeight, UIScreen.height * 0.1)
+                    if galleryViewHeight >= UIScreen.height * 0.7 {
+                        galleryViewHeight = min(galleryViewHeight, UIScreen.height * 0.7)
+                    }
+                }
+            }
+            .onEnded {_ in
+                lastHeight = galleryViewHeight
+            }
     }
 }
 
