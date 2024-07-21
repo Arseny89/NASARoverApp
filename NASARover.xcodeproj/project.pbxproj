@@ -13,13 +13,13 @@
 		0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */; };
 		0E5143562C4242EE00C48DFD /* RoverSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */; };
 		0E51435A2C44DA4B00C48DFD /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143592C44DA4B00C48DFD /* Titles.swift */; };
-		0E51435E2C46283E00C48DFD /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0E51435D2C46283E00C48DFD /* PureSwiftUI */; };
 		0E5143602C46286600C48DFD /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51435F2C46286500C48DFD /* Segments.swift */; };
 		0E5143622C4788D600C48DFD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143612C4788D600C48DFD /* Image.swift */; };
 		0E5143642C48B13000C48DFD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0E5143632C48B13000C48DFD /* Localizable.xcstrings */; };
 		0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143652C48B54400C48DFD /* UIScreen.swift */; };
 		0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143692C48BE2600C48DFD /* RoverView.swift */; };
 		0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51436B2C48D75000C48DFD /* RoverViewModel.swift */; };
+		0E5143722C4D908D00C48DFD /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0E5143712C4D908D00C48DFD /* PureSwiftUI */; };
 		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
 		0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */; };
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E51435E2C46283E00C48DFD /* PureSwiftUI in Frameworks */,
+				0E5143722C4D908D00C48DFD /* PureSwiftUI in Frameworks */,
 				F496B35A3F467C047A3233F2 /* Pods_NASARover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +279,7 @@
 			);
 			name = NASARover;
 			packageProductDependencies = (
-				0E51435D2C46283E00C48DFD /* PureSwiftUI */,
+				0E5143712C4D908D00C48DFD /* PureSwiftUI */,
 			);
 			productName = NASARover;
 			productReference = 0EFFB96E2C38D4D1004472F7 /* NASARover.app */;
@@ -357,7 +357,7 @@
 			);
 			mainGroup = 0EFFB9652C38D4D1004472F7;
 			packageReferences = (
-				0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+				0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
 			);
 			productRefGroup = 0EFFB96F2C38D4D1004472F7 /* Products */;
 			projectDirPath = "";
@@ -856,7 +856,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+		0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui";
 			requirement = {
@@ -867,9 +867,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E51435D2C46283E00C48DFD /* PureSwiftUI */ = {
+		0E5143712C4D908D00C48DFD /* PureSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E51435C2C46283E00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			package = 0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
 			productName = PureSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
