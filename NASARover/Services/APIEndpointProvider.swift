@@ -7,38 +7,40 @@
 
 import Foundation
 
-enum Config {
-    case config
-    
-    var configName: String {
-        switch self {
-        case .config: return "Config"
+extension APIEndpointProvider {
+    enum Config {
+        case config
+        
+        var configName: String {
+            switch self {
+            case .config: return "Config"
+            }
         }
     }
-}
-
-enum Endpoint {
-    case manifests(rover: Rovers)
-    case photosByDate(date: Date, rover: Rovers, page: Int)
-    case photosBySol(sol: Int, rover: Rovers, page: Int)
     
-    var pathComponent: String {
-        switch self {
-        case .manifests: return "manifests"
-        case .photosBySol: return "sol"
-        case .photosByDate: return "earth_date"
+    enum Endpoint {
+        case manifests(rover: Rovers)
+        case photosByDate(date: Date, rover: Rovers, page: Int)
+        case photosBySol(sol: Int, rover: Rovers, page: Int)
+        
+        var pathComponent: String {
+            switch self {
+            case .manifests: return "manifests"
+            case .photosBySol: return "sol"
+            case .photosByDate: return "earth_date"
+            }
         }
     }
-}
-
-enum Constants {
-    case photos (rover: Rovers)
-    case page
     
-    var pathComponent: String {
-        switch self {
-        case .photos (let rover): return "rovers/\(rover.rawValue)/photos"
-        case .page: return "page"
+    enum Constants {
+        case photos (rover: Rovers)
+        case page
+        
+        var pathComponent: String {
+            switch self {
+            case .photos (let rover): return "rovers/\(rover.rawValue)/photos"
+            case .page: return "page"
+            }
         }
     }
 }
