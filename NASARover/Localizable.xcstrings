@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
     "CuriosityMissionInfo" : {
       "extractionState" : "manual",
       "localizations" : {

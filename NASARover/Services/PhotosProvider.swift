@@ -10,6 +10,7 @@ import Combine
 
 protocol PhotosProvider {
     func fetchPhotos() -> AnyPublisher<[Int: URL], AppError>
+    func getManifestData() -> AnyPublisher<PhotoManifest, AppError>
 }
 
 final class PhotosProviderImpl: PhotosProvider {
@@ -31,7 +32,7 @@ final class PhotosProviderImpl: PhotosProvider {
         self.rover = rover
     }
     
-    private func getManifestData() -> AnyPublisher<PhotoManifest, AppError> {
+    func getManifestData() -> AnyPublisher<PhotoManifest, AppError> {
         if let manifest {
             return Just(manifest)
                 .setFailureType(to: AppError.self)

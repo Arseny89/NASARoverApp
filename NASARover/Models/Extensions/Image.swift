@@ -10,17 +10,18 @@ import SwiftUI
 
 extension Image {
     
-    init?(icon: Icons) {
+    init(icon: Icons) {
         self.init(systemName: icon.rawValue)
     }
     
-    init?(image: Images) {
-        self.init(systemName: image.rawValue)
+    init(image: Images) {
+        self.init(image.rawValue)
     }
     
     enum Icons: String {
         case ellipsisCircle = "ellipsis.circle"
         case calendar = "calendar"
+        case xmark = "xmark"
     }
     
     enum Images: String {

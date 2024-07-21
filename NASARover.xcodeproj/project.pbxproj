@@ -18,6 +18,8 @@
 		0E5143622C4788D600C48DFD /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143612C4788D600C48DFD /* Image.swift */; };
 		0E5143642C48B13000C48DFD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0E5143632C48B13000C48DFD /* Localizable.xcstrings */; };
 		0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143652C48B54400C48DFD /* UIScreen.swift */; };
+		0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143692C48BE2600C48DFD /* RoverView.swift */; };
+		0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51436B2C48D75000C48DFD /* RoverViewModel.swift */; };
 		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
 		0E6C81FE2C38E03A00A758ED /* APIEndpointProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */; };
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
@@ -63,6 +65,8 @@
 		0E5143612C4788D600C48DFD /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		0E5143632C48B13000C48DFD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		0E5143652C48B54400C48DFD /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		0E5143692C48BE2600C48DFD /* RoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverView.swift; sourceTree = "<group>"; };
+		0E51436B2C48D75000C48DFD /* RoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverViewModel.swift; sourceTree = "<group>"; };
 		0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointProvider.swift; sourceTree = "<group>"; };
 		0E6C81FF2C38E04800A758ED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -127,6 +131,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0E5143672C48BDA500C48DFD /* RoverSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */,
+				0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */,
+				0E51435F2C46286500C48DFD /* Segments.swift */,
+			);
+			path = RoverSelectionView;
+			sourceTree = "<group>";
+		};
+		0E5143682C48BDE300C48DFD /* RoverView */ = {
+			isa = PBXGroup;
+			children = (
+				0E5143692C48BE2600C48DFD /* RoverView.swift */,
+				0E51436B2C48D75000C48DFD /* RoverViewModel.swift */,
+			);
+			path = RoverView;
+			sourceTree = "<group>";
+		};
 		0E6C81F92C38E01000A758ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +199,9 @@
 		0EFFB9702C38D4D1004472F7 /* NASARover */ = {
 			isa = PBXGroup;
 			children = (
-				0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */,
 				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
-				0E5143552C4242EE00C48DFD /* RoverSelectionViewModel.swift */,
-				0E51435F2C46286500C48DFD /* Segments.swift */,
+				0E5143672C48BDA500C48DFD /* RoverSelectionView */,
+				0E5143682C48BDE300C48DFD /* RoverView */,
 				0E6C81FA2C38E01600A758ED /* Services */,
 				0E6C81F92C38E01000A758ED /* Models */,
 				0EFFB9752C38D4D2004472F7 /* Assets.xcassets */,
@@ -487,7 +509,9 @@
 				0E51435A2C44DA4B00C48DFD /* Titles.swift in Sources */,
 				0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */,
 				0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */,
+				0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
+				0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */,
 				0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */,
 				0E5143602C46286600C48DFD /* Segments.swift in Sources */,
 				0E5143562C4242EE00C48DFD /* RoverSelectionViewModel.swift in Sources */,

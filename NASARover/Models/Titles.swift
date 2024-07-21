@@ -12,4 +12,10 @@ enum Titles: String {
     case roverInfoSubtitle = "mission"
     case moreButton = "more"
     case fetchButton = "fetch all"
+    case maxDate = "max. date"
+    case maxSol = "max. sol"
+    case pickedDate = "date"
+    case pickedSol = "sol"
+    case totalPhotos = " total photos"
+
 }
