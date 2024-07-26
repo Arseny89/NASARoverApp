@@ -1,0 +1,33 @@
+//
+//  PhotoGalleryViewModel.swift
+//  NASARover
+//
+//  Created by Арсений Корниенко on 7/25/24.
+//
+
+import Combine
+import SwiftUI
+
+final class PhotoGalleryViewModel: ObservableObject {
+    private let photoProvider: PhotosProvider
+    private let rover: Rovers
+    private var cancellables = Set<AnyCancellable>()
+    @Published var photos: [Int: URL] = [:]
+    
+    init(for rover: Rovers) {
+        self.rover = rover
+        self.photoProvider = PhotosProviderImpl(for: rover)
+        bind()
+    }
+    
+    func bind() {
+        photoProvider.fetchPhotos()
+            .sink { completion in
+                guard case .failure(_) = completion else { return }
+            } receiveValue: { [weak self] photoURL in
+                guard let self else { return }
+                photos = photoURL
+            }
+            .store(in: &cancellables)
+    }
+}
