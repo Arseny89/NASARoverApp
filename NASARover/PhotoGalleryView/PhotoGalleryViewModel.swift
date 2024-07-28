@@ -9,10 +9,10 @@ import Combine
 import SwiftUI
 
 final class PhotoGalleryViewModel: ObservableObject {
+    @Published var photos: [Int: URL] = [:]
     private let photoProvider: PhotosProvider
     private let rover: Rovers
     private var cancellables = Set<AnyCancellable>()
-    @Published var photos: [Int: URL] = [:]
     
     init(for rover: Rovers) {
         self.rover = rover
