@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhotoGalleryView: View {
     @ObservedObject var viewModel: PhotoGalleryViewModel
-    let columns = [
+    private let columns = [
             GridItem(.adaptive(minimum: 80)),
             GridItem(.adaptive(minimum: 80)),
             GridItem(.adaptive(minimum: 80))
