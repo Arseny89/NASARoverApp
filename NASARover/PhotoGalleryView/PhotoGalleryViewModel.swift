@@ -10,6 +10,8 @@ import SwiftUI
 
 final class PhotoGalleryViewModel: ObservableObject {
     @Published var photos: [Int: URL] = [:]
+    @Published var detailedURL: URL? = nil
+    @Published var presentDetailedView: Bool = false
     private let photoProvider: PhotosProvider
     private let rover: Rovers
     private var cancellables = Set<AnyCancellable>()
