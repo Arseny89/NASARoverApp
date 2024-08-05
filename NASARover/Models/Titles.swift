@@ -17,5 +17,6 @@ enum Titles: String {
     case pickedDate = "date"
     case pickedSol = "sol"
     case totalPhotos = " total photos"
+    case showMoreButton = " show more"
 
 }

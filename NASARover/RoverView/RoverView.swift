@@ -11,8 +11,10 @@ struct RoverView: View {
     @ObservedObject var viewModel: RoverViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var minSheetHeight = 100
-    @State var galleryViewHeight: CGFloat = UIScreen.height * 0.1
-    @State var lastHeight: CGFloat = UIScreen.height * 0.1
+    @State var galleryViewHeight: CGFloat = UIScreen.height * 0.2
+    @State var lastHeight: CGFloat = UIScreen.height * 0.2
+    @State var currentHeight: CGFloat = 0.0
+    @State var photoGalleryView: PhotoGalleryView
     
     var body: some View {
         NavigationStack {
@@ -53,7 +55,7 @@ struct RoverView: View {
                                 Text(Titles.maxDate.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 10)
                                     .safeAreaPadding(.leading, 30)
                             }
                             Spacer()
@@ -67,7 +69,7 @@ struct RoverView: View {
                                 Text(Titles.maxSol.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 10)
                                     .safeAreaPadding(.leading, 30)
                             }
                             Spacer()
@@ -81,61 +83,56 @@ struct RoverView: View {
                                 Text(Titles.totalPhotos.rawValue.capitalized)
                                     .foregroundColor(.white)
                                     .font(.system(size: 15, weight: .semibold))
-                                    .safeAreaPadding(.bottom, galleryViewHeight + 50)
+                                    .safeAreaPadding(.bottom, galleryViewHeight + 10)
                                     .safeAreaPadding(.trailing, 30)
                             }
                         }
                     }
                     .frame(UIScreen.width, UIScreen.height)
-                    .background {
-                        Image("\($viewModel.rover.wrappedValue.rawValue)_bg")
-                            .resizable()
-                            .scaledToFill()
-                    }
                 }
                 .scrollDisabled(true)
-                .ignoresSafeArea()
-                PhotoGalleryView()
-                    .height(galleryViewHeight)
+                photoGalleryView
+                    .frame(UIScreen.width, $galleryViewHeight.wrappedValue)
                     .gesture(dragGesture)
+                    .backgroundColor(.white)
+                    .clipShape(.rect (topLeadingRadius: 20,
+                                      topTrailingRadius: 20))
             }
+            .background {
+                Image("\($viewModel.rover.wrappedValue.rawValue)_bg")
+                    .resizable()
+                    .scaledToFill()
+            }
+            .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
-struct PhotoGalleryView: View {
-    var body: some View {
-        VStack {
-            Rectangle()
-                .frame(width: UIScreen.width * 0.3, height: 5)
-                .clipShape(.capsule)
-                .foregroundColor(.gray)
-            
-            Spacer()
-        }
-    }
-}
-
 extension RoverView {
-    
-    var dragGesture: some Gesture {
-        DragGesture(minimumDistance: 20, coordinateSpace: .global)
+    public var dragGesture: some Gesture {
+        DragGesture(minimumDistance: 50, coordinateSpace: .global)
             .onChanged { value in
-                if galleryViewHeight >= UIScreen.height * 0.1 {
-                    galleryViewHeight = lastHeight - value.translation.y
-                    galleryViewHeight = max(galleryViewHeight, UIScreen.height * 0.1)
-                    if galleryViewHeight >= UIScreen.height * 0.7 {
-                        galleryViewHeight = min(galleryViewHeight, UIScreen.height * 0.7)
+                withAnimation(.smooth(duration: 0.6, extraBounce: 0.3)) {
+                    if galleryViewHeight >= UIScreen.height * 0.1 {
+                        galleryViewHeight = lastHeight - value.translation.y
+                        currentHeight = lastHeight - value.translation.y
                     }
                 }
             }
             .onEnded {_ in
-                lastHeight = galleryViewHeight
+                withAnimation(.smooth(duration: 0.6, extraBounce: 0.3)) {
+                    if currentHeight < UIScreen.height * 0.4 {
+                        galleryViewHeight = UIScreen.height * 0.2
+                    } else {
+                        galleryViewHeight = UIScreen.height * 0.7
+                    }
+                    lastHeight = galleryViewHeight
+                }
             }
     }
 }
 
 #Preview {
-    RoverView(viewModel: RoverViewModel(for: .opportunity))
+    RoverView(viewModel: RoverViewModel(for: .opportunity), photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: .opportunity)))
 }

@@ -47,7 +47,8 @@ struct RoverSelectionView: View {
                 HStack(spacing: 10) {
                     Spacer()
                     NavigationLink {
-                        RoverView(viewModel: RoverViewModel(for: viewModel.selectedRover))
+                        RoverView(viewModel: RoverViewModel(for: viewModel.selectedRover), 
+                                  photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: viewModel.selectedRover)))
                     } label: {
                         Spacer()
                         Text(Titles.fetchButton.rawValue.capitalized)
