@@ -25,18 +25,21 @@ struct PhotoGalleryView: View {
                 Spacer()
             }
             .height(20)
-            
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.photos.sorted { $1.0 < $0.0 }, id: \.key) { key, url in
                         AsyncImage(url: url) {image in
                             image
-                                .image?.resizable()
+                                .resizable()
                                 .scaledToFit()
+                                .onTapGesture {
+                                    viewModel.detailedURL = url
+                                    viewModel.presentDetailedView = true
+                                }
+                        } placeholder: {
+                            ProgressView()
                         }
                         .frame(width: 120, height: 120)
-                        .background(Color.white)
-                        .borderColor(.white)
                     }
                 }
                 Button {
@@ -52,8 +55,76 @@ struct PhotoGalleryView: View {
                 .padding(.vertical, 30)
                 
             }
-            .backgroundColor(.white)
             .ignoresSafeArea(.all)
+        }
+        .sheet(isPresented: $viewModel.presentDetailedView, content: {
+            DetailedView(detailedURL: $viewModel.detailedURL)
+                .presentationBackground(.clear)
+                .presentationDetents([.height(UIScreen.height * 0.7)])
+        })
+        .ignoresSafeArea(.all)
+    }
+}
+
+struct DetailedView: View {
+    @Binding var detailedURL: URL?
+    @State private var currentZoom = 0.0
+    @State private var totalZoom = 1.0
+    @State private var currentOffset = CGPoint.zero
+    @State private var previousOffset = CGPoint.zero
+    @State private var imageSize: CGSize = .zero
+    var body: some View {
+        VStack {
+            AsyncImage(url: detailedURL) {image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            .scaleEffect(currentZoom + totalZoom)
+            .gesture(
+                SimultaneousGesture(
+                    MagnifyGesture()
+                        .onChanged { value in
+                            currentZoom = value.magnification - 1
+                        }
+                        .onEnded { value in
+                            totalZoom += currentZoom
+                            currentZoom = 0
+                            if totalZoom < 1 {
+                                totalZoom = 1
+                            }
+                        },
+                    
+                    DragGesture(minimumDistance: 10, coordinateSpace: .global)
+                        .onChanged { value in
+                            if totalZoom > 1 {
+                                currentOffset.y = previousOffset.y + value.translation.y
+                                currentOffset.x = previousOffset.x + value.translation.x
+                            } else {
+                                withAnimation {
+                                    currentOffset = .zero
+                                }
+                            }
+                        }
+                        .onEnded { value in
+                            previousOffset = currentOffset
+                        }
+                )
+            )
+            .offset(currentOffset)
+            .background(Color.white.opacity(0.9))
+            .accessibilityZoomAction { action in
+                if action.direction == .zoomIn {
+                    totalZoom += 0.5
+                } else {
+                    totalZoom -= 0.5
+                }
+            }
+            .border(Color.white.opacity(0.9), width: 5)
+            .cornerRadiusIf(true, 5)
+            Spacer()
         }
         .ignoresSafeArea(.all)
     }

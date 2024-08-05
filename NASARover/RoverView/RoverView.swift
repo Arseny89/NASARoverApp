@@ -94,7 +94,7 @@ struct RoverView: View {
                 photoGalleryView
                     .frame(UIScreen.width, $galleryViewHeight.wrappedValue)
                     .gesture(dragGesture)
-                    .backgroundColor(.white)
+                    .backgroundColor(.white.opacity(0.9))
                     .clipShape(.rect (topLeadingRadius: 20,
                                       topTrailingRadius: 20))
             }
