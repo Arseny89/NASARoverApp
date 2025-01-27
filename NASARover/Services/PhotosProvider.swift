@@ -9,17 +9,16 @@ import Foundation
 import Combine
 
 protocol PhotosProvider {
-    func fetchPhotos() -> AnyPublisher<[Int: URL], AppError>
+    func fetchPhotos() -> AnyPublisher<[Int: PhotoData], AppError>
     func getManifestData() -> AnyPublisher<PhotoManifest, AppError>
 }
 
 final class PhotosProviderImpl: PhotosProvider {
-    
+
     private var dataProvider = APIDataProvider()
     private var manifest: PhotoManifest?
     private var photoCache: [PhotoResponse] = []
     private var photoDataCache: [Int: PhotoData] = [:]
-    private var photoUrlCache: [Int: URL] = [:]
     private var currentSolData: Photos?
     private let udStorageManager = UDStorageManager()
     private var favoritePhotoIDs: Set<Int> {
@@ -54,9 +53,9 @@ final class PhotosProviderImpl: PhotosProvider {
         return dataProvider.request(for: .photosBySol(sol: currentSolData.sol, rover: rover, page: currentPage))
     }
     
-    func fetchPhotos() -> AnyPublisher<[Int: URL], AppError> {
+    func fetchPhotos() -> AnyPublisher<[Int: PhotoData], AppError> {
         return getManifestData()
-            .flatMap { [weak self] manifest -> AnyPublisher<[Int: URL], AppError> in
+            .flatMap { [weak self] manifest -> AnyPublisher<[Int: PhotoData], AppError> in
                 guard let self else {
                     return Fail(error: AppError.unknown)
                         .eraseToAnyPublisher()
@@ -66,7 +65,7 @@ final class PhotosProviderImpl: PhotosProvider {
                     currentSolData = manifest.photos.first(where: {$0.sol == self.manifest?.maxSol})
                 }
                 return getRoverPhotos()
-                    .flatMap { response -> AnyPublisher<[Int: URL], AppError> in
+                    .flatMap { response -> AnyPublisher<[Int: PhotoData], AppError> in
                         self.currentPage += 1
                         if let currentSolData = self.currentSolData,
                            self.currentPage > currentSolData.pagesCount {
@@ -74,9 +73,10 @@ final class PhotosProviderImpl: PhotosProvider {
                             self.currentSolData = manifest.photos.last(where: {$0.sol < currentSolData.sol})
                         }
                         response.photos.forEach {
-                            self.photoUrlCache[$0.id] = $0.imageURL
+                            self.photoDataCache[$0.id] = $0.self
                         }
-                        return Just(self.photoUrlCache)
+                        return Just(self.photoDataCache)
+                        
                             .setFailureType(to: AppError.self)
                             .eraseToAnyPublisher()
                     }
