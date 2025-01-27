@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E171E122C853DB800CFE370 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E171E112C853DB800CFE370 /* CalendarView.swift */; };
+		0E171E152C8540F800CFE370 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E171E142C8540F700CFE370 /* CalendarViewModel.swift */; };
 		0E51434B2C3B85ED00C48DFD /* ManifestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */; };
 		0E51434D2C3B85FD00C48DFD /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */; };
 		0E51434F2C3B893700C48DFD /* PhotosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434E2C3B893700C48DFD /* PhotosProvider.swift */; };
@@ -19,7 +21,6 @@
 		0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143652C48B54400C48DFD /* UIScreen.swift */; };
 		0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143692C48BE2600C48DFD /* RoverView.swift */; };
 		0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51436B2C48D75000C48DFD /* RoverViewModel.swift */; };
-		0E5143722C4D908D00C48DFD /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0E5143712C4D908D00C48DFD /* PureSwiftUI */; };
 		0E5143752C5307EF00C48DFD /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143742C5307EF00C48DFD /* PhotoGalleryView.swift */; };
 		0E5143772C53082F00C48DFD /* PhotoGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5143762C53082F00C48DFD /* PhotoGalleryViewModel.swift */; };
 		0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FB2C38E02800A758ED /* APIDataProvider.swift */; };
@@ -27,6 +28,8 @@
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
 		0E6C82022C38E06800A758ED /* Rovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C82012C38E06800A758ED /* Rovers.swift */; };
 		0E6C82042C38E13800A758ED /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6C82032C38E13800A758ED /* Config.plist */; };
+		0EFCD31A2C6182EF00116FA7 /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0EFCD3192C6182EF00116FA7 /* PureSwiftUI */; };
+		0EFCD31C2C631F3100116FA7 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCD31B2C631F3100116FA7 /* Photo.swift */; };
 		0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */; };
 		0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */; };
 		0EFFB9762C38D4D2004472F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EFFB9752C38D4D2004472F7 /* Assets.xcassets */; };
@@ -57,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E171E112C853DB800CFE370 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		0E171E142C8540F700CFE370 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestResponse.swift; sourceTree = "<group>"; };
 		0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		0E51434E2C3B893700C48DFD /* PhotosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosProvider.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 		0E6C82012C38E06800A758ED /* Rovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rovers.swift; sourceTree = "<group>"; };
 		0E6C82032C38E13800A758ED /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		0EFCD3172C535AB400116FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0EFCD31B2C631F3100116FA7 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0EFFB96E2C38D4D1004472F7 /* NASARover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASARover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASARoverApp.swift; sourceTree = "<group>"; };
 		0EFFB9732C38D4D1004472F7 /* RoverSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverSelectionView.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E5143722C4D908D00C48DFD /* PureSwiftUI in Frameworks */,
+				0EFCD31A2C6182EF00116FA7 /* PureSwiftUI in Frameworks */,
 				F496B35A3F467C047A3233F2 /* Pods_NASARover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E171E132C853DC300CFE370 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				0E171E112C853DB800CFE370 /* CalendarView.swift */,
+				0E171E142C8540F700CFE370 /* CalendarViewModel.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
 		0E5143502C3B952A00C48DFD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +187,7 @@
 				0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */,
 				0E51434C2C3B85FD00C48DFD /* PhotoResponse.swift */,
 				0E5143592C44DA4B00C48DFD /* Titles.swift */,
-				0E5143502C3B952A00C48DFD /* Extensions */,
+				0EFCD31B2C631F3100116FA7 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +228,7 @@
 		0EFFB9702C38D4D1004472F7 /* NASARover */ = {
 			isa = PBXGroup;
 			children = (
+				0E171E132C853DC300CFE370 /* CalendarView */,
 				0EFCD3172C535AB400116FA7 /* Info.plist */,
 				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
 				0E5143672C48BDA500C48DFD /* RoverSelectionView */,
@@ -220,6 +236,7 @@
 				0E5143732C5307BF00C48DFD /* PhotoGalleryView */,
 				0E6C81FA2C38E01600A758ED /* Services */,
 				0E6C81F92C38E01000A758ED /* Models */,
+				0E5143502C3B952A00C48DFD /* Extensions */,
 				0EFFB9752C38D4D2004472F7 /* Assets.xcassets */,
 				0EFFB9772C38D4D2004472F7 /* Preview Content */,
 				0E6C82032C38E13800A758ED /* Config.plist */,
@@ -295,7 +312,7 @@
 			);
 			name = NASARover;
 			packageProductDependencies = (
-				0E5143712C4D908D00C48DFD /* PureSwiftUI */,
+				0EFCD3192C6182EF00116FA7 /* PureSwiftUI */,
 			);
 			productName = NASARover;
 			productReference = 0EFFB96E2C38D4D1004472F7 /* NASARover.app */;
@@ -373,7 +390,7 @@
 			);
 			mainGroup = 0EFFB9652C38D4D1004472F7;
 			packageReferences = (
-				0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
+				0EFCD3182C6182EF00116FA7 /* XCRemoteSwiftPackageReference "pure-swift-ui" */,
 			);
 			productRefGroup = 0EFFB96F2C38D4D1004472F7 /* Products */;
 			projectDirPath = "";
@@ -526,9 +543,11 @@
 				0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */,
 				0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */,
 				0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */,
+				0EFCD31C2C631F3100116FA7 /* Photo.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
 				0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */,
 				0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */,
+				0E171E122C853DB800CFE370 /* CalendarView.swift in Sources */,
 				0E5143602C46286600C48DFD /* Segments.swift in Sources */,
 				0E5143562C4242EE00C48DFD /* RoverSelectionViewModel.swift in Sources */,
 				0E6C82022C38E06800A758ED /* Rovers.swift in Sources */,
@@ -540,6 +559,7 @@
 				0E6C81FC2C38E02800A758ED /* APIDataProvider.swift in Sources */,
 				0E5143772C53082F00C48DFD /* PhotoGalleryViewModel.swift in Sources */,
 				0E51434D2C3B85FD00C48DFD /* PhotoResponse.swift in Sources */,
+				0E171E152C8540F800CFE370 /* CalendarViewModel.swift in Sources */,
 				0E51434F2C3B893700C48DFD /* PhotosProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +725,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NASARover/Preview Content\"";
+				DEVELOPMENT_TEAM = 46T5R84CPV;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -736,6 +757,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NASARover/Preview Content\"";
+				DEVELOPMENT_TEAM = 46T5R84CPV;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -876,7 +898,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
+		0EFCD3182C6182EF00116FA7 /* XCRemoteSwiftPackageReference "pure-swift-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CodeSlicing/pure-swift-ui";
 			requirement = {
@@ -887,9 +909,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0E5143712C4D908D00C48DFD /* PureSwiftUI */ = {
+		0EFCD3192C6182EF00116FA7 /* PureSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0E5143702C4D908D00C48DFD /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
+			package = 0EFCD3182C6182EF00116FA7 /* XCRemoteSwiftPackageReference "pure-swift-ui" */;
 			productName = PureSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
