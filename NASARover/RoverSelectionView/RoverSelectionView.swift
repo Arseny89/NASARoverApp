@@ -10,6 +10,7 @@ import SwiftUI
 struct RoverSelectionView: View {
     @ObservedObject var viewModel: RoverSelectionViewModel
     @State private var date = Date()
+    @State var presentCalendarView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -61,7 +62,8 @@ struct RoverSelectionView: View {
                     .clipCapsule()
                     Spacer()
                     
-                    Button {
+                    NavigationLink {
+                        CalendarView(viewModel: CalendarViewModel(for: viewModel.selectedRover))
                     }
                 label: {
                     Image(icon: .calendar)
