@@ -9,9 +9,11 @@ import Combine
 import SwiftUI
 
 final class PhotoGalleryViewModel: ObservableObject {
-    @Published var photos: [Int: URL] = [:]
+    @Published var photos: [Int: PhotoData] = [:]
     @Published var detailedURL: URL? = nil
     @Published var presentDetailedView: Bool = false
+    @Published var photoData: PhotoData? = nil
+    @Published var inFavorites: Bool = false
     private let photoProvider: PhotosProvider
     private let rover: Rovers
     private var cancellables = Set<AnyCancellable>()
@@ -26,9 +28,9 @@ final class PhotoGalleryViewModel: ObservableObject {
         photoProvider.fetchPhotos()
             .sink { completion in
                 guard case .failure(_) = completion else { return }
-            } receiveValue: { [weak self] photoURL in
+            } receiveValue: { [weak self] photoData in
                 guard let self else { return }
-                photos = photoURL
+                photos = photoData
             }
             .store(in: &cancellables)
     }
