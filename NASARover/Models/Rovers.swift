@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Rovers: String, CaseIterable {
+enum Rovers: String, CaseIterable, Decodable {
     case curiosity
     case opportunity
     case spirit

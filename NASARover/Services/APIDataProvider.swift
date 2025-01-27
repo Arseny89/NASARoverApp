@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 import Combine
 
 enum AppError: Error, Decodable {
@@ -31,46 +30,6 @@ enum AppError: Error, Decodable {
 
 final class APIDataProvider {
     private let endpointProvider = APIEndpointProvider(for: .config)
-    
-    func getData<T: Decodable>(for endpoint: APIEndpointProvider.Endpoint, completion: @escaping (T) -> Void?,
-                               errorHandler: @escaping (AppError) -> Void?){
-        let url = endpointProvider.getURL(for: endpoint)
-        
-        AF.request(url)
-            .response {response in
-                switch response.result {
-                case .success(let data):
-                    guard let data,
-                          let statusCode = response.response?.statusCode else {
-                        errorHandler(AppError.networkError)
-                        return
-                    }
-                    
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    DispatchQueue.main.async {
-                        if (200...299) ~= statusCode {
-                            do {
-                                let object = try decoder.decode(T.self, from: data)
-                                completion(object)
-                            } catch {
-                                errorHandler(.decodeJSONfailed)
-                            }
-                        } else {
-                            do {
-                                let error = try decoder.decode(APIError.self,
-                                                               from: data)
-                                errorHandler(.apiError(error))
-                            } catch {
-                                errorHandler(.unknown)
-                            }
-                        }
-                    }
-                case .failure(let error):
-                    errorHandler(.other(error.localizedDescription))
-                }
-            }
-    }
     
     func request<T: Decodable>(for endpoint: APIEndpointProvider.Endpoint) -> AnyPublisher<T, AppError> {
         return URLSession.shared

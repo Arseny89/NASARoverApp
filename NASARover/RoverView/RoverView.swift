@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RoverView: View {
     @ObservedObject var viewModel: RoverViewModel
@@ -16,13 +17,14 @@ struct RoverView: View {
     @State var currentHeight: CGFloat = 0.0
     @State var photoGalleryView: PhotoGalleryView
     
+    
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView {
                     VStack {
                         HStack {
-                            Text($viewModel.rover.wrappedValue.rawValue.uppercased())
+                            Text($viewModel.selectedRover.wrappedValue.rawValue.uppercased())
                                 .font(.system(size: 28, weight: .bold))
                                 .shadow(1, offset: 5.0, angle: .bottomTrailing)
                                 .foregroundColor(.white)
@@ -43,12 +45,18 @@ struct RoverView: View {
                             .padding(20)
                             .safeAreaPadding(.top, 30)
                         }
+                        NavigationLink {
+                            FavoritePhotoGallery(rover: $viewModel.selectedRover)
+                        } label: {
+                        Text("Favorite photos")
+                                .backgroundColor(.white)
+                        }
                         Spacer()
                         HStack {
                             VStack {
                                 Text("\($viewModel.maxDate.wrappedValue)")
                                     .foregroundColor(.white)
-                                    .font(.system(size: 20, weight: .bold))
+                                    .font(.system(size: 18, weight: .bold))
                                     .safeAreaPadding(.leading, 30)
                                     .lineLimit(1)
                                 
@@ -62,7 +70,7 @@ struct RoverView: View {
                             VStack {
                                 Text("\($viewModel.maxSol.wrappedValue)")
                                     .foregroundColor(.white)
-                                    .font(.system(size: 20, weight: .bold))
+                                    .font(.system(size: 18, weight: .bold))
                                     .safeAreaPadding(.leading, 30)
                                     .lineLimit(1)
                                 
@@ -76,7 +84,7 @@ struct RoverView: View {
                             VStack {
                                 Text("\($viewModel.totalPhotos.wrappedValue)")
                                     .foregroundColor(.white)
-                                    .font(.system(size: 20, weight: .bold))
+                                    .font(.system(size: 18, weight: .bold))
                                     .safeAreaPadding(.trailing, 30)
                                     .lineLimit(1)
                                 
@@ -99,13 +107,16 @@ struct RoverView: View {
                                       topTrailingRadius: 20))
             }
             .background {
-                Image("\($viewModel.rover.wrappedValue.rawValue)_bg")
+                Image("\($viewModel.selectedRover.wrappedValue.rawValue)_bg")
                     .resizable()
                     .scaledToFill()
             }
             .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear {
+            viewModel.bind()
+        }
     }
 }
 
@@ -125,7 +136,7 @@ extension RoverView {
                     if currentHeight < UIScreen.height * 0.4 {
                         galleryViewHeight = UIScreen.height * 0.2
                     } else {
-                        galleryViewHeight = UIScreen.height * 0.7
+                        galleryViewHeight = UIScreen.height * 0.8
                     }
                     lastHeight = galleryViewHeight
                 }
@@ -133,6 +144,32 @@ extension RoverView {
     }
 }
 
+struct FavoritePhotoGallery: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query private var photos: [Photo]
+    @Binding var rover: Rovers
+    private let columns = [
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80))
+    ]
+    
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach(photos, id: \.id) { photo in
+                    if photo.rover.lowercased() == rover.rawValue {
+                        photo.image
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                .frame(width: 120, height: 120)
+            }
+        }
+    }
+}
+
 #Preview {
-    RoverView(viewModel: RoverViewModel(for: .opportunity), photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: .opportunity)))
+    RoverView(viewModel: RoverViewModel(for: .curiosity), photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: .curiosity)))
 }

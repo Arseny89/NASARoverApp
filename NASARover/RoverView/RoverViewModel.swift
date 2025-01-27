@@ -10,20 +10,17 @@ import Combine
 
 final class RoverViewModel: ObservableObject {
     @Published var manifest: [PhotoManifest] = []
-    @Published var selectedRover: Rovers = .curiosity
+    @Published var selectedRover: Rovers
     @Published var totalPhotos: Int = 0
     @Published var maxDate: String = "--"
     @Published var maxSol: Int = 0
     private let photoProvider: PhotosProvider
-    var rover: Rovers
     private var cancellables = Set<AnyCancellable>()
     
     init(for rover: Rovers) {
-        self.rover = rover
+        self.selectedRover = rover
         self.photoProvider = PhotosProviderImpl(for: rover)
-        
-        bind()
-    }
+        }
     
     func bind() {
         photoProvider.getManifestData()

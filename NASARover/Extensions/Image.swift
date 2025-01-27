@@ -22,6 +22,7 @@ extension Image {
         case ellipsisCircle = "ellipsis.circle"
         case calendar = "calendar"
         case xmark = "xmark"
+        case add = "plus"
     }
     
     enum Images: String {
