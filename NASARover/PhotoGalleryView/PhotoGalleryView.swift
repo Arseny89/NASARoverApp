@@ -11,10 +11,10 @@ import SwiftData
 struct PhotoGalleryView: View {
     @ObservedObject var viewModel: PhotoGalleryViewModel
     private let columns = [
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80))
-        ]
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80)),
+        GridItem(.adaptive(minimum: 80))
+    ]
     @Query private var photos: [Photo]
     
     var body: some View {
@@ -31,18 +31,23 @@ struct PhotoGalleryView: View {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.photos.sorted { $1.0 < $0.0 }, id: \.key) { key, photoData in
-                        AsyncImage(url: photoData.imageURL) {image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .onTapGesture {
-                                    viewModel.detailedURL = photoData.imageURL
-                                    viewModel.photoData = photoData
-                                    viewModel.presentDetailedView = true
-                                    checkFavorites()
-                                }
-                        } placeholder: {
-                            ProgressView()
+                        ZStack {
+                            if let cachedImage = viewModel.getCachedImage(for: String(photoData.id)) {
+                                Image(uiImage: cachedImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .onTapGesture {
+                                        viewModel.detailedURL = photoData.imageURL
+                                        viewModel.photoData = photoData
+                                        viewModel.presentDetailedView = true
+                                        checkFavorites()
+                                    }
+                            } else {
+                                ProgressView()
+                                    .onAppear {
+                                        viewModel.fetchImage(for: photoData) { _ in }
+                                    }
+                            }
                         }
                         .frame(width: 120, height: 120)
                     }
@@ -69,14 +74,13 @@ struct PhotoGalleryView: View {
         .ignoresSafeArea(.all)
     }
     
-   private func checkFavorites() {
+    private func checkFavorites() {
         if photos.compactMap({ $0.url }).contains(viewModel.photoData?.imageURL) {
             viewModel.inFavorites = true
         } else {
             viewModel.inFavorites = false
         }
     }
-
 }
 
 struct DetailedView: View {
@@ -91,7 +95,7 @@ struct DetailedView: View {
     @State private var currentOffset = CGPoint.zero
     @State private var previousOffset = CGPoint.zero
     @State private var scaleButtonPressed: CGFloat = 1
-  
+    
     var body: some View {
         VStack {
             Spacer()
@@ -171,15 +175,15 @@ struct DetailedView: View {
             .scaledToFit()
             .scrollDisabled(true)
             Button {
-                    saveImage()
+                saveImage()
             } label : {
-                    Image(icon: .add)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(20)
-                        .foregroundColor(.white)
-                    Text("Add")
-                        .foregroundColor(.white)
+                Image(icon: .add)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(20)
+                    .foregroundColor(.white)
+                Text("Add")
+                    .foregroundColor(.white)
             }
             .frame(width: 100, height: 30)
             .background(.blue)
