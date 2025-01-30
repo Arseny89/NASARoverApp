@@ -28,6 +28,7 @@
 		0E6C82002C38E04800A758ED /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C81FF2C38E04800A758ED /* APIError.swift */; };
 		0E6C82022C38E06800A758ED /* Rovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C82012C38E06800A758ED /* Rovers.swift */; };
 		0E6C82042C38E13800A758ED /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6C82032C38E13800A758ED /* Config.plist */; };
+		0E77A9102D4883EE00C5E189 /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77A90F2D4883EE00C5E189 /* DataCacheManager.swift */; };
 		0EFCD31A2C6182EF00116FA7 /* PureSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0EFCD3192C6182EF00116FA7 /* PureSwiftUI */; };
 		0EFCD31C2C631F3100116FA7 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFCD31B2C631F3100116FA7 /* Photo.swift */; };
 		0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */; };
@@ -81,6 +82,7 @@
 		0E6C81FF2C38E04800A758ED /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		0E6C82012C38E06800A758ED /* Rovers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rovers.swift; sourceTree = "<group>"; };
 		0E6C82032C38E13800A758ED /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		0E77A90F2D4883EE00C5E189 /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
 		0EFCD3172C535AB400116FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0EFCD31B2C631F3100116FA7 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0EFFB96E2C38D4D1004472F7 /* NASARover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASARover.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 				0E6C81FD2C38E03A00A758ED /* APIEndpointProvider.swift */,
 				0E51434E2C3B893700C48DFD /* PhotosProvider.swift */,
 				0E5143532C3E6FBF00C48DFD /* UDStorageManager.swift */,
+				0E77A90F2D4883EE00C5E189 /* DataCacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				0EFCD31C2C631F3100116FA7 /* Photo.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
 				0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */,
+				0E77A9102D4883EE00C5E189 /* DataCacheManager.swift in Sources */,
 				0E5143662C48B54400C48DFD /* UIScreen.swift in Sources */,
 				0E171E122C853DB800CFE370 /* CalendarView.swift in Sources */,
 				0E5143602C46286600C48DFD /* Segments.swift in Sources */,

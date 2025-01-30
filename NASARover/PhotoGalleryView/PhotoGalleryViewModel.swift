@@ -34,4 +34,29 @@ final class PhotoGalleryViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+    func fetchImage(for data: PhotoData, completion: @escaping (UIImage?) -> Void) {
+        downloadImage(from: data.imageURL)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] image in
+                guard let self else { return }
+                if let image = image {
+                    DataCacheManager.cache.setObject(object: image, for: String(data.id))
+                    objectWillChange.send()
+                }
+                completion(image)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getCachedImage(for key: String) -> UIImage? {
+        return DataCacheManager.cache.getObject(for: key) as? UIImage
+    }
+    
+    private func downloadImage(from url: URL) -> AnyPublisher<UIImage?, Never> {
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .eraseToAnyPublisher()
+    }
 }
