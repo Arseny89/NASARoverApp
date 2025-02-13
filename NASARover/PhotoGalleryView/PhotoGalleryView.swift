@@ -15,7 +15,6 @@ struct PhotoGalleryView: View {
         GridItem(.adaptive(minimum: 80)),
         GridItem(.adaptive(minimum: 80))
     ]
-    @Query private var photos: [Photo]
     
     var body: some View {
         VStack {
@@ -31,25 +30,7 @@ struct PhotoGalleryView: View {
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.photos.sorted { $1.0 < $0.0 }, id: \.key) { key, photoData in
-                        ZStack {
-                            if let cachedImage = viewModel.getCachedImage(for: String(photoData.id)) {
-                                Image(uiImage: cachedImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .onTapGesture {
-                                        viewModel.detailedURL = photoData.imageURL
-                                        viewModel.photoData = photoData
-                                        viewModel.presentDetailedView = true
-                                        checkFavorites()
-                                    }
-                            } else {
-                                ProgressView()
-                                    .onAppear {
-                                        viewModel.fetchImage(for: photoData) { _ in }
-                                    }
-                            }
-                        }
-                        .frame(width: 120, height: 120)
+                        PhotoCell(photoData: photoData, viewModel: viewModel)
                     }
                 }
                 Button {
@@ -72,6 +53,34 @@ struct PhotoGalleryView: View {
                 .presentationBackground(.black.opacity(0.7))
         })
         .ignoresSafeArea(.all)
+    }
+}
+
+struct PhotoCell: View {
+    var photoData: PhotoData
+    @ObservedObject var viewModel: PhotoGalleryViewModel
+    @Query private var photos: [Photo]
+    
+    var body: some View {
+        ZStack {
+            if let cachedImage = viewModel.getCachedImage(for: String(photoData.id)) {
+                Image(uiImage: cachedImage)
+                    .resizable()
+                    .scaledToFit()
+                    .onTapGesture {
+                        viewModel.detailedURL = photoData.imageURL
+                        viewModel.photoData = photoData
+                        viewModel.presentDetailedView = true
+                        checkFavorites()
+                    }
+            } else {
+                ProgressView()
+                    .onAppear {
+                        viewModel.fetchImage(for: photoData) { _ in }
+                    }
+            }
+        }
+        .frame(width: 120, height: 120)
     }
     
     private func checkFavorites() {
