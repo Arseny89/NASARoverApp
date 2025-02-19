@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0E09842D5DA7F300CB56B8 /* FavoritePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E09832D5DA7F300CB56B8 /* FavoritePhotosView.swift */; };
+		0E0E09862D5DA80800CB56B8 /* FavoritePhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E09852D5DA80800CB56B8 /* FavoritePhotosViewModel.swift */; };
+		0E0E09892D5EFAA400CB56B8 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E09882D5EFAA400CB56B8 /* DetailedView.swift */; };
 		0E171E122C853DB800CFE370 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E171E112C853DB800CFE370 /* CalendarView.swift */; };
 		0E171E152C8540F800CFE370 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E171E142C8540F700CFE370 /* CalendarViewModel.swift */; };
 		0E51434B2C3B85ED00C48DFD /* ManifestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E0E09832D5DA7F300CB56B8 /* FavoritePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotosView.swift; sourceTree = "<group>"; };
+		0E0E09852D5DA80800CB56B8 /* FavoritePhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePhotosViewModel.swift; sourceTree = "<group>"; };
+		0E0E09882D5EFAA400CB56B8 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		0E171E112C853DB800CFE370 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		0E171E142C8540F700CFE370 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		0E51434A2C3B85ED00C48DFD /* ManifestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestResponse.swift; sourceTree = "<group>"; };
@@ -135,6 +141,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0E09822D5DA7C500CB56B8 /* FavoritePhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				0E0E09832D5DA7F300CB56B8 /* FavoritePhotosView.swift */,
+				0E0E09852D5DA80800CB56B8 /* FavoritePhotosViewModel.swift */,
+			);
+			path = FavoritePhotosView;
+			sourceTree = "<group>";
+		};
+		0E0E09872D5EFA8F00CB56B8 /* DetailedView */ = {
+			isa = PBXGroup;
+			children = (
+				0E0E09882D5EFAA400CB56B8 /* DetailedView.swift */,
+			);
+			path = DetailedView;
+			sourceTree = "<group>";
+		};
 		0E171E132C853DC300CFE370 /* CalendarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +254,8 @@
 		0EFFB9702C38D4D1004472F7 /* NASARover */ = {
 			isa = PBXGroup;
 			children = (
+				0E0E09872D5EFA8F00CB56B8 /* DetailedView */,
+				0E0E09822D5DA7C500CB56B8 /* FavoritePhotosView */,
 				0E171E132C853DC300CFE370 /* CalendarView */,
 				0EFCD3172C535AB400116FA7 /* Info.plist */,
 				0EFFB9712C38D4D1004472F7 /* NASARoverApp.swift */,
@@ -545,8 +570,11 @@
 				0E51435A2C44DA4B00C48DFD /* Titles.swift in Sources */,
 				0EFFB9742C38D4D1004472F7 /* RoverSelectionView.swift in Sources */,
 				0E5143542C3E6FBF00C48DFD /* UDStorageManager.swift in Sources */,
+				0E0E09842D5DA7F300CB56B8 /* FavoritePhotosView.swift in Sources */,
 				0E51436A2C48BE2600C48DFD /* RoverView.swift in Sources */,
 				0EFCD31C2C631F3100116FA7 /* Photo.swift in Sources */,
+				0E0E09892D5EFAA400CB56B8 /* DetailedView.swift in Sources */,
+				0E0E09862D5DA80800CB56B8 /* FavoritePhotosViewModel.swift in Sources */,
 				0EFFB9722C38D4D1004472F7 /* NASARoverApp.swift in Sources */,
 				0E51436C2C48D75000C48DFD /* RoverViewModel.swift in Sources */,
 				0E77A9102D4883EE00C5E189 /* DataCacheManager.swift in Sources */,

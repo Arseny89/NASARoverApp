@@ -10,26 +10,24 @@ import SwiftData
 
 @Model
 final class Photo {
-    var rover: String
     @Attribute(.unique)
-    var url: URL
+    var id: UUID
     var data: Data
-    var date: String
-    var sol: Int
-    var camera: String
+    var photoDataRaw: Data?
     
-    @Transient
-    var image: Image {
-        guard let uiImage = UIImage(data: data) else {return Image(icon: .xmark)}
-        return Image(uiImage: uiImage)
-    }
-    
-    init(rover: String, url: URL, data: Data, date: String, sol: Int, camera: String) {
-        self.rover = rover
-        self.url = url
+    var photoData: PhotoData? {
+            get {
+                guard let rawData = photoDataRaw else { return nil }
+                return try? JSONDecoder().decode(PhotoData.self, from: rawData)
+            }
+            set {
+                photoDataRaw = try? JSONEncoder().encode(newValue)
+            }
+        }
+
+    init(id: UUID, data: Data, photoData: PhotoData) {
+        self.id = id
         self.data = data
-        self.date = date
-        self.sol = sol
-        self.camera = camera
+        self.photoData = photoData
     }
 }

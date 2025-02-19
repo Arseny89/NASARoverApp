@@ -14,6 +14,7 @@ final class PhotoGalleryViewModel: ObservableObject {
     @Published var presentDetailedView: Bool = false
     @Published var photoData: PhotoData? = nil
     @Published var inFavorites: Bool = false
+    @Published var selectedPhotoData: Data?
     private let photoProvider: PhotosProvider
     private let rover: Rovers
     private var cancellables = Set<AnyCancellable>()

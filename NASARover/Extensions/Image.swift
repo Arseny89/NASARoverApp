@@ -23,6 +23,11 @@ extension Image {
         case calendar = "calendar"
         case xmark = "xmark"
         case add = "plus"
+        case heart = "heart.fill"
+        case trash = "trash"
+        case checkmarkSquare = "checkmark.square.fill"
+        case square = "square.fill"
+        case download = "square.and.arrow.down"
     }
     
     enum Images: String {
