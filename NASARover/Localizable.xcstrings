@@ -13,6 +13,9 @@
     "Add" : {
 
     },
+    "Cancel" : {
+
+    },
     "CuriosityMissionInfo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -34,7 +37,7 @@
         }
       }
     },
-    "Favorite photos" : {
+    "Done" : {
 
     },
     "OpportunityMissionInfo" : {
@@ -47,6 +50,21 @@
           }
         }
       }
+    },
+    "Remove" : {
+
+    },
+    "Remove from favorites?" : {
+
+    },
+    "Save" : {
+
+    },
+    "Save to photo gallery?" : {
+
+    },
+    "Select" : {
+
     },
     "SpiritMissionInfo" : {
       "extractionState" : "manual",
