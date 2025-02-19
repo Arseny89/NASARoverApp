@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RoverSelectionView: View {
-    @ObservedObject var viewModel: RoverSelectionViewModel
+    @Environment(\.modelContext) private var modelContext
+    @StateObject var viewModel: RoverSelectionViewModel
     @State private var date = Date()
     @State var presentCalendarView: Bool = false
+    @Query private var photos: [Photo]
     
     var body: some View {
         NavigationStack {
@@ -48,8 +51,7 @@ struct RoverSelectionView: View {
                 HStack(spacing: 10) {
                     Spacer()
                     NavigationLink {
-                        RoverView(viewModel: RoverViewModel(for: viewModel.selectedRover), 
-                                  photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: viewModel.selectedRover)))
+                        RoverView(rover: viewModel.selectedRover, photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: viewModel.selectedRover)))
                     } label: {
                         Spacer()
                         Text(Titles.fetchButton.rawValue.capitalized)
@@ -60,8 +62,22 @@ struct RoverSelectionView: View {
                     .height(50)
                     .backgroundColor(.blue)
                     .clipCapsule()
-                    Spacer()
                     
+                    NavigationLink {
+                        FavoritePhotosView(rover: viewModel.selectedRover, photos: photos, modelContext: modelContext)
+                    } label: {
+                        Image(icon: .heart)
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(20)
+                            .padding(.horizontal, 30)
+                    }
+                    .foregroundColor(.white)
+                    .height(50)
+                    .backgroundColor(.blue)
+                    .clipCapsule()
+                                        
                     NavigationLink {
                         CalendarView(viewModel: CalendarViewModel(for: viewModel.selectedRover))
                     }
