@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct RoverView: View {
-    @ObservedObject var viewModel: RoverViewModel
+    @StateObject var viewModel: RoverViewModel
     @Environment(\.presentationMode) var presentationMode
     @State var minSheetHeight = 100
     @State var galleryViewHeight: CGFloat = UIScreen.height * 0.2
@@ -17,6 +17,10 @@ struct RoverView: View {
     @State var currentHeight: CGFloat = 0.0
     @State var photoGalleryView: PhotoGalleryView
     
+    init(rover: Rovers, photoGalleryView: PhotoGalleryView) {
+        self._viewModel = StateObject(wrappedValue: RoverViewModel(for: rover))
+        self.photoGalleryView = photoGalleryView
+    }
     
     var body: some View {
         NavigationStack {
@@ -44,12 +48,6 @@ struct RoverView: View {
                             }
                             .padding(20)
                             .safeAreaPadding(.top, 30)
-                        }
-                        NavigationLink {
-                            FavoritePhotoGallery(rover: $viewModel.selectedRover)
-                        } label: {
-                        Text("Favorite photos")
-                                .backgroundColor(.white)
                         }
                         Spacer()
                         HStack {
@@ -144,32 +142,6 @@ extension RoverView {
     }
 }
 
-struct FavoritePhotoGallery: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var photos: [Photo]
-    @Binding var rover: Rovers
-    private let columns = [
-        GridItem(.adaptive(minimum: 80)),
-        GridItem(.adaptive(minimum: 80)),
-        GridItem(.adaptive(minimum: 80))
-    ]
-    
-    var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(photos, id: \.id) { photo in
-                    if photo.rover.lowercased() == rover.rawValue {
-                        photo.image
-                            .resizable()
-                            .scaledToFit()
-                    }
-                }
-                .frame(width: 120, height: 120)
-            }
-        }
-    }
-}
-
 #Preview {
-    RoverView(viewModel: RoverViewModel(for: .curiosity), photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: .curiosity)))
+    RoverView(rover: .curiosity, photoGalleryView: PhotoGalleryView(viewModel: PhotoGalleryViewModel(for: .curiosity)))
 }
