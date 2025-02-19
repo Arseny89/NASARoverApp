@@ -32,7 +32,6 @@ final class CalendarViewModel: ObservableObject {
                             (self.getDate(from: $0.earthDate), $0.sol)
                         }
                 )
-                print(dates)
             }
             .store(in: &cancellables)
     }
