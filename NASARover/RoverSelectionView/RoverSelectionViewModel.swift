@@ -5,7 +5,6 @@
 //  Created by Арсений Корниенко on 7/12/24.
 //
 
-import Foundation
 import Combine
 
 final class RoverSelectionViewModel: ObservableObject {
