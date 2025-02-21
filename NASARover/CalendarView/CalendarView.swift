@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftUI
-import UIKit
 
 struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
