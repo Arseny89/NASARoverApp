@@ -34,8 +34,7 @@ enum Cameras: String {
         case .mardi: return "Mars Descent Imager"
         case .navcam: return "Navigation Camera"
         case .pancam: return "Panoramic Camera"
-        case .minites: return "Miniature Thermal Emission Spectrometer"
-            
+        case .minites: return "Miniature Thermal Emission Spectrometer"            
         }
     }
 }
