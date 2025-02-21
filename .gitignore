@@ -71,6 +71,6 @@ xcuserdata/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 
-*Config.plist
+*.Config.plist
 
 #macOS
