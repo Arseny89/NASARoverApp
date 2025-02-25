@@ -14,6 +14,8 @@ Due to external API limitations, photos currently load only for the Curiosity ro
 
 🔍 Filter by date, camera, and rover
 
+🔍 Open and zoom in on photos for a detailed view
+
 ❤️ Save photos to favorites
 
 💾 Save photos in user's Photo Library
@@ -34,31 +36,32 @@ MVVM
 
 | Home Screen   | Rover Screen |
 | ------------- |:-------------:|
-|       ![Simulator Screenshot - iPhone 15 - 2025-02-20 at 19 52 46](https://github.com/user-attachments/assets/954d14c8-c24c-4534-8a58-d84a12c1e794) | ![Simulator Screenshot - iPhone 15 - 2025-02-20 at 19 53 26](https://github.com/user-attachments/assets/44a03bfe-249a-4c09-8625-94ea0ae8a0e1)
+|    <img src = "https://github.com/user-attachments/assets/3a9982c7-93c0-416e-8c86-9ffd83f0f463" width="280">| <img src = "https://github.com/user-attachments/assets/67892c88-c971-4f4d-a83f-758a6b7bb3d2" width="280">|
+
 
 
 ## 📦 Installation
 
-Clone the repository:
-```sh
-git clone https://github.com/your-username/NasaRoverApp.git
-```
-Open the project in Xcode.
+1. Clone the repository.
 
-Build and run the app on a simulator or device.
+2. Open the project in Xcode.
+
+3. Build and run the app on a simulator or device.
 
 ## 🔑 API Key
 
-To use the NASA API, you need an API key. Get one here.
+To use the NASA API, you need an API key. Get one [here](https://api.nasa.gov).
 
 Add the key to your Config.plist:
 
+```xml
 <key>apiKey</key>
 <string>YOUR_API_KEY_HERE</string>
+```
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENCE) file for details.
 
 ## 👨‍💻 Author
 
