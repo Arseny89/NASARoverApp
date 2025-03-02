@@ -44,9 +44,11 @@ MVVM
 
 1. Clone the repository.
 
-2. Open the project in Xcode.
+2. Run `pod install` to install the required dependencies.
 
-3. Build and run the app on a simulator or device.
+3. Open the project in Xcode using the `.xcworkspace` file.
+
+4. Build and run the app on a simulator or device.
 
 ## 🔑 API Key
 
